@@ -590,7 +590,7 @@
    {
      "code": "TWD",
      "name": "New Taiwan Dollar",
-     "format": "####.##",
+     "format": "#,###.##",
      "symbol": ""
    },
    {
