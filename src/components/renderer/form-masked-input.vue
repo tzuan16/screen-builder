@@ -156,6 +156,7 @@ export default {
       return Object.assign({}, (config ? this[config] : {}) , this.$attrs);
     },
     getCurrencyFormat() {
+      console.log("aaa", this.dataMask)
       const format = this.dataMask && this.dataMask ? this.dataMask && this.dataMask.format : null;
       const separators = format ? format.match(/[.,]/g) : ['.', ','];
       if (separators.length === 0) separators.push('', '.');
