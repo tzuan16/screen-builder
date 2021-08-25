@@ -156,7 +156,10 @@ export default {
       return Object.assign({}, (config ? this[config] : {}) , this.$attrs);
     },
     getCurrencyFormat() {
-      console.log("aaa", this.dataMask)
+      // A dirty hack to resolve TWD display issue
+      if (this.dataMask && this.dataMask.code === 'TWD') {
+        this.$set(this.dataMask, format, '#,###.##');
+      }
       const format = this.dataMask && this.dataMask ? this.dataMask && this.dataMask.format : null;
       const separators = format ? format.match(/[.,]/g) : ['.', ','];
       if (separators.length === 0) separators.push('', '.');
